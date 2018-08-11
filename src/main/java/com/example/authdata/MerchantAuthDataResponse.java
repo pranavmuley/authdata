@@ -23,5 +23,10 @@ public class MerchantAuthDataResponse {
 	}
 	public void setMerchantAuthDataAccess(MerchantAuthDataAccess merchantAuthDataAccess) {
 		this.merchantAuthDataAccess = merchantAuthDataAccess;
+	}
+	@Override
+	public String toString() {
+		return "MerchantAuthDataResponse [emailId=" + emailId + ", merchantAuthDataAccess=" + merchantAuthDataAccess
+				+ "]";
 	} 
 }

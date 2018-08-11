@@ -26,6 +26,11 @@
 		<appengine.app.version>1</appengine.app.version>
     	<appengine.target.version>1.9.64</appengine.target.version>
     	<appengine-maven-plugin-version>1.3.2</appengine-maven-plugin-version>
+    	
+    	<INSTANCE_CONNECTION_NAME>merchant-auth-data</INSTANCE_CONNECTION_NAME>
+  		<user>root</user>
+  		<password>root</password>
+  		<database>merchant_auth_data_db</database>
 		
 	</properties>
 
@@ -40,6 +45,21 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-gcp-dependencies</artifactId>
+          <version>1.0.0.RC1</version>
+          <type>pom</type>
+          <scope>import</scope>
+          </dependency>
+        <!-- Add CloudSQL Starter for MySQL -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+        <version>1.0.0.M2</version>
+      </dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -64,6 +84,15 @@
 	      <scope>test</scope>
 	    </dependency>    	
 	</dependencies>
+	
+	<repositories>
+      <!-- Use Spring Milestone Repository -->
+      <repository>
+        <id>repository.spring.milestone</id>
+        <name>Spring Milestones Repository</name>
+        <url>http://repo.spring.io/milestone</url>
+      </repository>
+    </repositories>
 
 	<build>
 	<outputDirectory>target/${project.artifactId}/WEB-INF/classes</outputDirectory> 

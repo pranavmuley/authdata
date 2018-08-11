@@ -60,5 +60,10 @@ public class MerchantAuthDataAccess {
 	public void setManageAccount(boolean manageAccount) {
 		this.manageAccount = manageAccount;
 	}
+	@Override
+	public String toString() {
+		return "MerchantAuthDataAccess [chargeback=" + chargeback + ", transactions=" + transactions + ", admin="
+				+ admin + ", manageAccount=" + manageAccount + "]";
+	}
 	
 }
