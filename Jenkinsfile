@@ -1,9 +1,5 @@
 pipeline {
-  agent any
-  tools{
-    maven 'maven 3'
-    jdk 'java 8'
-  }
+  agent any  
   stages {
     stage('Build') {
       steps {
@@ -12,7 +8,7 @@ pipeline {
         echo "M2_HOME = ${M2_HOME}"
         '''
         dir("project_templates/java_project_template"){
-          sh 'mvn clean verify'
+          sh './mvnw clean verify'
         }
       }
     }
